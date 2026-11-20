@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Test</title></head>
+<body>
+<script src="js/core/EventBus.js"></script>
+<script>
+console.log('bus available:', typeof bus !== 'undefined');
+console.log('EventBus available:', typeof EventBus !== 'undefined');
+const testBus = new EventBus();
+testBus.on('test', (data) => console.log('Test event:', data));
+testBus.emit('test', 'hello');
+console.log('All tests passed!');
+</script>
+</body>
+</html>

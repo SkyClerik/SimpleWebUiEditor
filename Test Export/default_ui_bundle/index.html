@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+    <title>default — UI Application</title>
+    <script src="runtime/VisualElement.js"></script>
+    <script src="runtime/bundle.js"></script>
+    <script src="app_logic.js" defer></script>
+    <style>
+        body { margin: 0; background: #1e1e1e; color: #e0e0e0; font-family: "Segoe UI", sans-serif; display: flex; flex-direction: column; height: 100vh; }
+        #ui-root { flex: 1; overflow: auto; }
+        #debug-bar { background: #252526; border-top: 1px solid #3c3c3c; padding: 8px 16px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; }
+        code { background: #1e1e1e; padding: 2px 6px; border-radius: 3px; color: #9cdcfe; }
+    </style>
+</head>
+<body>
+    <div id="ui-root"></div>
+    <div id="debug-bar">
+        <span id="status-text">⏳ Инициализация UI...</span>
+        <span>Контроллер логики: <code>app_logic.js</code> · Консоль: <b>F12</b></span>
+    </div>
+</body>
+</html>

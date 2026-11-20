@@ -1,0 +1,27 @@
+.color-red {
+    background-color: #cc0000;
+}
+
+.color-green {
+    background-color: #66cc00;
+}
+
+.btn-primary:hover {
+    font-size: 30px;
+    background-color: #cc0052;
+}
+
+.btn-primary {
+    font-size: 20px;
+}
+
+.btn-primary:active {
+    font-size: 10px;
+    background-color: #1789d5;
+}
+
+.btn-primary:focus {
+    color: #2bff00;
+    font-size: 10px;
+    background-color: #00cc52;
+}

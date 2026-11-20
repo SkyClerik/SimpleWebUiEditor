@@ -1,0 +1,169 @@
+{
+  "$schema": "ve-document/1.0",
+  "name": "main",
+  "root": {
+    "uid": "root-001",
+    "name": "rootPanel",
+    "tag": "div",
+    "classes": [
+      "panel",
+      "flex-column"
+    ],
+    "inlineStyles": {
+      "padding": "16px",
+      "gap": "8",
+      "display": "flex",
+      "backgroundColor": "#0099ff",
+      "width": "100%",
+      "height": "100%",
+      "paddingBottom": "0",
+      "paddingTop": "0",
+      "paddingRight": "0",
+      "paddingLeft": "0",
+      "flexDirection": "column",
+      "alignItems": "flex-start"
+    },
+    "attributes": {},
+    "textContent": "",
+    "children": [
+      {
+        "uid": "header-001",
+        "name": "header",
+        "tag": "div",
+        "classes": [
+          "header",
+          "color-green"
+        ],
+        "inlineStyles": {
+          "padding": "12px",
+          "color": "#ffffff",
+          "minHeight": "60px",
+          "backgroundColor": "",
+          "width": "100%"
+        },
+        "attributes": {},
+        "textContent": "Hello World",
+        "children": []
+      },
+      {
+        "uid": "a87a9d22-abc7-44c8-bec9-f0636e36cfff",
+        "name": "header",
+        "tag": "div",
+        "classes": [
+          "header",
+          "color-green"
+        ],
+        "inlineStyles": {
+          "padding": "12px",
+          "color": "#ffffff",
+          "minHeight": "60px",
+          "backgroundColor": "",
+          "width": "100%"
+        },
+        "attributes": {},
+        "textContent": "Hello World",
+        "children": []
+      },
+      {
+        "uid": "b16ec5cc-0be8-4b0f-9979-b53ad327f057",
+        "name": "header",
+        "tag": "div",
+        "classes": [
+          "header",
+          "color-green"
+        ],
+        "inlineStyles": {
+          "padding": "12px",
+          "color": "#ffffff",
+          "minHeight": "60px",
+          "backgroundColor": "",
+          "width": "100%"
+        },
+        "attributes": {},
+        "textContent": "Hello World",
+        "children": []
+      },
+      {
+        "uid": "content-001",
+        "name": "contentArea",
+        "tag": "div",
+        "classes": [
+          "content"
+        ],
+        "inlineStyles": {
+          "padding": "16px",
+          "flex": "1",
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "12px",
+          "border": "1px dashed #ccc",
+          "borderRadius": "8px"
+        },
+        "attributes": {},
+        "textContent": "",
+        "children": [
+          {
+            "uid": "btn-container-001",
+            "name": "buttonContainer",
+            "tag": "div",
+            "classes": [
+              "button-row"
+            ],
+            "inlineStyles": {
+              "display": "flex",
+              "gap": "8px",
+              "justifyContent": "flex-start"
+            },
+            "attributes": {},
+            "textContent": "",
+            "children": [
+              {
+                "uid": "btn-submit-001",
+                "name": "BTN_Submit",
+                "tag": "button",
+                "classes": [
+                  "btn-primary"
+                ],
+                "inlineStyles": {
+                  "padding": "10px 20px",
+                  "color": "#ffffff",
+                  "border": "none",
+                  "borderRadius": "4px",
+                  "cursor": "pointer",
+                  "fontSize": "14px",
+                  "backgroundColor": ""
+                },
+                "attributes": {},
+                "textContent": "Submit",
+                "children": []
+              },
+              {
+                "uid": "btn-cancel-001",
+                "name": "BTN_Cancel",
+                "tag": "button",
+                "classes": [
+                  "btn-secondary"
+                ],
+                "inlineStyles": {
+                  "padding": "10px 20px",
+                  "backgroundColor": "#6c757d",
+                  "color": "#ffffff",
+                  "border": "none",
+                  "borderRadius": "4px",
+                  "cursor": "pointer",
+                  "fontSize": "14px"
+                },
+                "attributes": {},
+                "textContent": "Cancel",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "stylesheets": [
+    "tes.css"
+  ]
+}

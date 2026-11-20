@@ -1,0 +1,434 @@
+/* ============================================================
+   style.css — Стилизация элементов редактора
+   В стиле Unity UI Toolkit
+   ============================================================ */
+
+/* Documents Module */
+.new-doc-btn {
+    width: 100%;
+    background: #0e639c;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.new-doc-btn:hover {
+    background: #1177bb;
+}
+
+.doc-list {
+    list-style: none;
+}
+
+.doc-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.doc-item:hover {
+    background: #2a2d2e;
+}
+
+.doc-item.active {
+    background: #094771;
+}
+
+.doc-item-icon {
+    font-size: 16px;
+}
+
+.doc-item-name {
+    flex: 1;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+.doc-item-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.doc-action-btn {
+    background: transparent;
+    border: none;
+    color: #858585;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.doc-action-btn:hover {
+    background: #c75450;
+    color: white;
+}
+
+/* Hierarchy Module */
+.hierarchy-toolbar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.hierarchy-btn {
+    background: #2d2d2d;
+    border: 1px solid #191919;
+    color: #cccccc;
+    padding: 6px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.hierarchy-btn:hover {
+    background: #3c3c3c;
+}
+
+.hierarchy-tree {
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+}
+
+.tree-item {
+    margin: 2px 0;
+}
+
+.tree-item-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tree-item-header:hover {
+    background: #2a2d2e;
+}
+
+.tree-item-selected .tree-item-header {
+    background: #094771;
+}
+
+.tree-item-hover .tree-item-header {
+    background: #1a3a5c;
+}
+
+.tree-item-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #569cd6;
+}
+
+.tree-item-name {
+    flex: 1;
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+.tree-item-uid {
+    font-size: 10px;
+    color: #888;
+    font-family: monospace;
+}
+
+.tree-children {
+    margin-left: 10px;
+}
+
+.tree-children.collapsed {
+    display: none;
+}
+
+.tree-item.dragging {
+    opacity: 0.5;
+}
+
+.tree-item.drag-over {
+    background: #094771;
+}
+
+/* Inspector Module */
+.inspector-section {
+    margin-bottom: 12px;
+}
+
+.inspector-section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #191919;
+}
+
+/* Inspector Categories (Unity-style) */
+.insp-category {
+    margin-bottom: 8px;
+    border: 1px solid #191919;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.insp-category-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    background: #3c3c3c;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s;
+}
+
+.insp-category-header:hover {
+    background: #454545;
+}
+
+.insp-category-arrow {
+    font-size: 10px;
+    color: #888;
+    width: 12px;
+    text-align: center;
+}
+
+.insp-category-icon {
+    font-size: 14px;
+}
+
+.insp-category-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e0e0e0;
+    flex: 1;
+}
+
+.insp-category-body {
+    padding: 8px;
+    background: #2d2d30;
+}
+
+.inspector-field {
+    margin-bottom: 8px;
+}
+
+.inspector-field:last-child {
+    margin-bottom: 0;
+}
+
+.inspector-field label {
+    display: block;
+    font-size: 12px;
+    color: #b0b0b0;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.inspector-field input,
+.inspector-field textarea,
+.inspector-field select {
+    width: 100%;
+    background: #3c3c3c;
+    border: 1px solid #191919;
+    color: #e0e0e0;
+    padding: 6px 8px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.inspector-field input:focus,
+.inspector-field textarea:focus,
+.inspector-field select:focus {
+    outline: none;
+    border-color: #007acc;
+}
+
+.inspector-field input[readonly] {
+    background: #2d2d2d;
+    color: #888;
+    cursor: default;
+}
+
+.insp-attr-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.insp-attr-key,
+.insp-attr-val {
+    flex: 1;
+}
+
+.inspector-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #888;
+    font-size: 14px;
+}
+
+.inspector-empty-field {
+    color: #888;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.inspector-btn-add {
+    width: 100%;
+    background: #2d2d2d;
+    border: 1px dashed #4a4a4a;
+    color: #b0b0b0;
+    padding: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.inspector-btn-add:hover {
+    background: #3c3c3c;
+    color: #e0e0e0;
+}
+
+.insp-attr-key,
+.insp-attr-val {
+    flex: 1;
+}
+
+.insp-attr-del {
+    background: transparent;
+    border: none;
+    color: #858585;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+.insp-attr-del:hover {
+    background: #c75450;
+    color: white;
+}
+
+/* Color picker row */
+.insp-color-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.insp-color-row input[type="color"] {
+    width: 36px;
+    height: 32px;
+    padding: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.insp-color-row input[type="text"] {
+    flex: 1;
+}
+
+/* Simple color picker with alpha slider below */
+.insp-simple-color-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: fit-content;
+}
+
+.insp-simple-color-picker input[type="color"] {
+    width: 200px;
+    height: 40px;
+    padding: 2px;
+    cursor: pointer;
+    border: 1px solid #191919;
+    border-radius: 3px;
+    background: #3c3c3c;
+}
+
+.insp-simple-color-picker input[type="range"] {
+    width: 200px;
+    height: 24px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, transparent, #000000);
+    border: 1px solid #191919;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.insp-simple-color-picker input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 24px;
+    border-radius: 2px;
+    background: #007acc;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+.insp-simple-color-picker input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 24px;
+    border-radius: 2px;
+    background: #007acc;
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+/* 4-value row (top, right, bottom, left) */
+.insp-4value-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.insp-4value-row input {
+    width: 100%;
+    background: #3c3c3c;
+    border: 1px solid #191919;
+    color: #e0e0e0;
+    padding: 6px 8px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.insp-4value-row input:focus {
+    outline: none;
+    border-color: #007acc;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #424242;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4e4e4e;
+}

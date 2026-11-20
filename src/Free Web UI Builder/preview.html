@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>UI Runtime Test</title>
+    <script src="js/core/VisualElement.js"></script>
+</head>
+<body style="margin: 0; background: #1e1e1e;">
+    <div id="ui-root"></div>
+
+    <script>
+        (async function() {
+            const root = await VisualElement.mount('main', document.getElementById('ui-root'));
+
+            console.log('=== UI MOUNTED ===');
+            console.log('Документ:', root._docName);
+            console.log('Загруженные CSS классы:', Array.from(root._classRulesMap.keys()));
+
+            const btnSubmit = root.Q('BTN_Submit');
+            const headerLabel = root.Q('header');
+            const headers = root.Query('header');
+
+            console.log('Найдено элементов с ID "header":', headers.length);
+
+            btnSubmit.on('click', () => {
+                console.group('🖱️ Клик по BTN_Submit');
+                console.log('1. Классы ДО:', [...headerLabel.classes]);
+                console.log('2. Inline-стили ДО:', { ...headerLabel.inlineStyles });
+
+                if (headerLabel.inlineStyles.backgroundColor) {
+                    headerLabel.style.backgroundColor = '';
+                }
+
+                const targetClass = 'color-red';
+                if (!root._classRulesMap.has(targetClass)) {
+                    console.warn(
+                        '⚠️ Класс .' + targetClass + ' не найден в подключённых .css! Доступные классы:',
+                        Array.from(root._classRulesMap.keys())
+                    );
+                }
+
+                headerLabel.text = 'test text';
+                headerLabel.addClass(targetClass);
+
+                if (headers.length > 1) {
+                    headers[1].text = 'test text 1';
+                }
+
+                console.log('3. Классы ПОСЛЕ:', [...headerLabel.classes]);
+                console.log('4. Итоговый цвет фона:', getComputedStyle(headerLabel.dom).backgroundColor);
+                console.groupEnd();
+            });
+        })();
+    </script>
+</body>
+</html>

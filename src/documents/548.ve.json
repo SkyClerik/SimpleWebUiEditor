@@ -1,0 +1,48 @@
+{
+  "$schema": "ve-document/1.0",
+  "name": "548",
+  "root": {
+    "uid": "21072076-4af9-45dc-bccb-b3f19812b3d8",
+    "name": "548Root",
+    "tag": "div",
+    "classes": [],
+    "inlineStyles": {
+      "padding": "20px"
+    },
+    "attributes": {},
+    "textContent": "",
+    "children": [
+      {
+        "uid": "fbdd84d7-21d9-4a37-b8f6-f281aac73bd0",
+        "name": "header",
+        "tag": "div",
+        "classes": [],
+        "inlineStyles": {
+          "padding": "12px",
+          "backgroundColor": "#cc0077",
+          "color": "#ffffff",
+          "borderRadius": "4px",
+          "marginBottom": "16px"
+        },
+        "attributes": {},
+        "textContent": "548 Document",
+        "children": []
+      },
+      {
+        "uid": "7b817e74-4efc-4927-9063-a8b2b99b9c5d",
+        "name": "content",
+        "tag": "div",
+        "classes": [],
+        "inlineStyles": {
+          "padding": "16px",
+          "border": "1px dashed #ccc",
+          "minHeight": "100px",
+          "backgroundImage": "url(\"https://img.youtube.com/vi/P6bP3OPuVPU/maxresdefault.jpg\")"
+        },
+        "attributes": {},
+        "textContent": "Content area",
+        "children": []
+      }
+    ]
+  }
+}

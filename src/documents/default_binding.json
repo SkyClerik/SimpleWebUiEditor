@@ -1,0 +1,208 @@
+{
+  "$schema": "ui-binding/1.0",
+  "project": "default",
+  "generated": "2026-11-21T02:35:28.260479",
+  "documents": {
+    "10": {
+      "template": "asset_10",
+      "stylesheets": [],
+      "elements": {
+        "10Root": {
+          "selector": "div",
+          "tag": "div",
+          "uid": "dc5d1881-9fa1-4b03-b0d3-5e51ea6586d7",
+          "doc": "10"
+        },
+        "header": {
+          "selector": "div > div",
+          "tag": "div",
+          "uid": "25441b9a-8279-49f1-83ea-04690e80c72b",
+          "doc": "10"
+        },
+        "content": {
+          "selector": "div > div",
+          "tag": "div",
+          "uid": "0d2f88a4-9ccd-4155-a107-a925e94eef50",
+          "doc": "10"
+        },
+        "div_1795183655391": {
+          "selector": "div > div > div",
+          "tag": "div",
+          "uid": "3d6aa1fc-f5b1-46d4-b8de-626eb423bb99",
+          "doc": "10"
+        },
+        "div_1795184385063": {
+          "selector": "div > div > div",
+          "tag": "div",
+          "uid": "c0a2fa0b-6b7d-4513-9168-b55deba999ef",
+          "doc": "10"
+        },
+        "button_1795184381530": {
+          "selector": "div > div > div > button",
+          "tag": "button",
+          "uid": "54968f76-a571-4762-aa9b-b07a69b4cbd2",
+          "doc": "10"
+        },
+        "button_1795184381711": {
+          "selector": "div > div > div > button",
+          "tag": "button",
+          "uid": "12c75979-7039-40e5-9898-8de5d889cb65",
+          "doc": "10"
+        }
+      }
+    },
+    "548": {
+      "template": "asset_548",
+      "stylesheets": [],
+      "elements": {
+        "548Root": {
+          "selector": "div",
+          "tag": "div",
+          "uid": "21072076-4af9-45dc-bccb-b3f19812b3d8",
+          "doc": "548"
+        },
+        "header": {
+          "selector": "div > div",
+          "tag": "div",
+          "uid": "fbdd84d7-21d9-4a37-b8f6-f281aac73bd0",
+          "doc": "548"
+        },
+        "content": {
+          "selector": "div > div",
+          "tag": "div",
+          "uid": "7b817e74-4efc-4927-9063-a8b2b99b9c5d",
+          "doc": "548"
+        }
+      }
+    },
+    "main": {
+      "template": "asset_main",
+      "stylesheets": [
+        "tes.css"
+      ],
+      "elements": {
+        "rootPanel": {
+          "selector": "div.panel.flex-column",
+          "tag": "div",
+          "uid": "root-001",
+          "doc": "main"
+        },
+        "header": {
+          "selector": "div.panel.flex-column > div.header.color-green",
+          "tag": "div",
+          "uid": "b16ec5cc-0be8-4b0f-9979-b53ad327f057",
+          "doc": "main"
+        },
+        "contentArea": {
+          "selector": "div.panel.flex-column > div.content",
+          "tag": "div",
+          "uid": "content-001",
+          "doc": "main"
+        },
+        "buttonContainer": {
+          "selector": "div.panel.flex-column > div.content > div.button-row",
+          "tag": "div",
+          "uid": "btn-container-001",
+          "doc": "main"
+        },
+        "BTN_Submit": {
+          "selector": "div.panel.flex-column > div.content > div.button-row > button.btn-primary",
+          "tag": "button",
+          "uid": "btn-submit-001",
+          "doc": "main"
+        },
+        "BTN_Cancel": {
+          "selector": "div.panel.flex-column > div.content > div.button-row > button.btn-secondary",
+          "tag": "button",
+          "uid": "btn-cancel-001",
+          "doc": "main"
+        }
+      }
+    }
+  },
+  "ids": {
+    "10Root": {
+      "selector": "div",
+      "tag": "div",
+      "uid": "dc5d1881-9fa1-4b03-b0d3-5e51ea6586d7",
+      "doc": "10"
+    },
+    "header": {
+      "selector": "div > div",
+      "tag": "div",
+      "uid": "25441b9a-8279-49f1-83ea-04690e80c72b",
+      "doc": "10"
+    },
+    "content": {
+      "selector": "div > div",
+      "tag": "div",
+      "uid": "0d2f88a4-9ccd-4155-a107-a925e94eef50",
+      "doc": "10"
+    },
+    "div_1795183655391": {
+      "selector": "div > div > div",
+      "tag": "div",
+      "uid": "3d6aa1fc-f5b1-46d4-b8de-626eb423bb99",
+      "doc": "10"
+    },
+    "div_1795184385063": {
+      "selector": "div > div > div",
+      "tag": "div",
+      "uid": "c0a2fa0b-6b7d-4513-9168-b55deba999ef",
+      "doc": "10"
+    },
+    "button_1795184381530": {
+      "selector": "div > div > div > button",
+      "tag": "button",
+      "uid": "54968f76-a571-4762-aa9b-b07a69b4cbd2",
+      "doc": "10"
+    },
+    "button_1795184381711": {
+      "selector": "div > div > div > button",
+      "tag": "button",
+      "uid": "12c75979-7039-40e5-9898-8de5d889cb65",
+      "doc": "10"
+    },
+    "548Root": {
+      "selector": "div",
+      "tag": "div",
+      "uid": "21072076-4af9-45dc-bccb-b3f19812b3d8",
+      "doc": "548"
+    },
+    "rootPanel": {
+      "selector": "div.panel.flex-column",
+      "tag": "div",
+      "uid": "root-001",
+      "doc": "main"
+    },
+    "contentArea": {
+      "selector": "div.panel.flex-column > div.content",
+      "tag": "div",
+      "uid": "content-001",
+      "doc": "main"
+    },
+    "buttonContainer": {
+      "selector": "div.panel.flex-column > div.content > div.button-row",
+      "tag": "div",
+      "uid": "btn-container-001",
+      "doc": "main"
+    },
+    "BTN_Submit": {
+      "selector": "div.panel.flex-column > div.content > div.button-row > button.btn-primary",
+      "tag": "button",
+      "uid": "btn-submit-001",
+      "doc": "main"
+    },
+    "BTN_Cancel": {
+      "selector": "div.panel.flex-column > div.content > div.button-row > button.btn-secondary",
+      "tag": "button",
+      "uid": "btn-cancel-001",
+      "doc": "main"
+    }
+  },
+  "assets": {
+    "10": "asset_10",
+    "548": "asset_548",
+    "main": "asset_main"
+  }
+}

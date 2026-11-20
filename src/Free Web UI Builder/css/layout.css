@@ -1,0 +1,255 @@
+/* ============================================================
+   layout.css — Floating panels DnD system
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    background: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* Toolbar */
+.toolbar {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    background: #2d2d30;
+    border-bottom: 1px solid #1a1a1d;
+    padding: 0 12px;
+    user-select: none;
+    flex-shrink: 0;
+    z-index: 1000;
+}
+
+.toolbar-left .app-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.toolbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.doc-tabs {
+    display: flex;
+    gap: 2px;
+}
+
+.doc-tab {
+    padding: 4px 12px;
+    background: #3c3c3c;
+    border: none;
+    color: #cccccc;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.doc-tab.active {
+    background: #007acc;
+    color: #ffffff;
+}
+
+.server-status {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: #2d5a2d;
+    color: #6bff6b;
+}
+
+.toolbar-btn {
+    padding: 4px 10px;
+    background: #3c3c3c;
+    border: 1px solid #555;
+    color: #cccccc;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.toolbar-btn:hover {
+    background: #505050;
+}
+
+.toolbar-btn.primary {
+    background: #0e639c;
+    border-color: #1177bb;
+    color: #ffffff;
+}
+
+.toolbar-btn.primary:hover {
+    background: #1177bb;
+}
+
+/* Workspace — контейнер для плавающих панелей */
+.workspace {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 36px);
+    overflow: hidden;
+    background: #252526;
+}
+
+/* Floating Panel */
+.floating-panel {
+    position: absolute;
+    background: #2d2d30;
+    border: 1px solid #1a1a1d;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    min-width: 44px;
+    min-height: 150px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.floating-panel.dragging {
+    opacity: 0.85;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
+
+.floating-panel.focused {
+    border-color: #007acc;
+    box-shadow: 0 4px 16px rgba(0, 122, 204, 0.3);
+    z-index: 100;
+}
+
+/* Panel Header (drag handle) */
+.panel-header {
+    display: flex;
+    align-items: center;
+    background: #3c3c3c;
+    padding: 6px 10px;
+    cursor: grab;
+    user-select: none;
+    border-bottom: 1px solid #1a1a1d;
+}
+
+.panel-header:active {
+    cursor: grabbing;
+}
+
+.panel-title {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 600;
+    color: #cccccc;
+}
+
+.panel-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.panel-btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: #858585;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.panel-btn:hover {
+    background: #505050;
+    color: #ffffff;
+}
+
+.panel-btn.close:hover {
+    background: #c75450;
+}
+
+/* Panel Content */
+.panel-content {
+    flex: 1;
+    overflow: auto;
+    overflow-x: auto;
+    padding: 8px;
+    min-height: 0;
+}
+
+/* Resize Handle */
+.resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    cursor: nwse-resize;
+    background: linear-gradient(135deg, transparent 50%, #555 50%);
+    border-radius: 0 0 6px 0;
+}
+
+.resize-handle:hover {
+    background: linear-gradient(135deg, transparent 50%, #007acc 50%);
+}
+
+/* Viewport specific */
+.canvas-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    padding: 20px;
+    background: #1e1e1e;
+}
+
+#canvas-host {
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: width 0.3s;
+}
+
+.viewport-controls {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px;
+    background: #252526;
+    border-top: 1px solid #1a1a1d;
+}
+
+.viewport-btn {
+    padding: 4px 12px;
+    background: #3c3c3c;
+    border: 1px solid #555;
+    color: #cccccc;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.viewport-btn.active {
+    background: #007acc;
+    border-color: #007acc;
+    color: #ffffff;
+}

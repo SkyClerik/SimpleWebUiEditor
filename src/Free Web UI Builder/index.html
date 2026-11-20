@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Web UI Builder</title>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="toolbar" class="toolbar">
+        <div class="toolbar-left">
+            <span class="app-title">Free Web UI Builder</span>
+        </div>
+        <div class="toolbar-center">
+            <div id="layout-presets-bar"></div>
+        </div>
+        <div class="toolbar-right">
+            <span id="server-status" class="server-status">Online</span>
+            <button id="btn-undo" class="toolbar-btn" title="Undo (Ctrl+Z)">Undo</button>
+            <button id="btn-redo" class="toolbar-btn" title="Redo (Ctrl+Y)">Redo</button>
+            <button id="btn-save" class="toolbar-btn primary" title="Save (Ctrl+S)">Save</button>
+            <button id="btn-build" class="toolbar-btn" style="background: #2d5a2d; border-color: #3d7a3d; color: #fff;" title="Build & Export">🔨 Build</button>
+        </div>
+    </div>
+
+    <div id="workspace" class="workspace"></div>
+
+    <!-- Шаблоны плавающих окон -->
+    <template id="tpl-documents"><div class="panel-content"></div></template>
+    <template id="tpl-stylesheets"><div class="panel-content"></div></template>
+    <template id="tpl-library"><div class="panel-content"></div></template>
+    <template id="tpl-hierarchy"><div class="panel-content"></div></template>
+    <template id="tpl-inspector"><div class="panel-content"></div></template>
+    <template id="tpl-viewport"><div class="panel-content"></div></template>
+
+    <!-- Core -->
+    <script src="js/core/EventBus.js"></script>
+    <script src="js/core/DockingSystem.js"></script>
+    <script src="js/core/UndoRedo.js"></script>
+    <script src="js/core/VisualElement.js"></script>
+    <script src="js/core/LayoutManager.js"></script>
+
+    <!-- UI Widgets & Modules -->
+    <script src="js/modules/Inspector/ColorPicker.js"></script>
+    <script src="js/modules/Documents/DocumentsModule.js"></script>
+    <script src="js/modules/Stylesheets/StylesheetsModule.js"></script>
+    <script src="js/modules/Library/LibraryModule.js"></script>
+    <script src="js/modules/Hierarchy/HierarchyModule.js"></script>
+    <script src="js/modules/Viewport/ViewportCamera.js"></script>
+    <script src="js/modules/Viewport/ViewportCascade.js"></script>
+    <script src="js/modules/Viewport/ViewportToolbar.js"></script>
+    <script src="js/modules/Viewport/ViewportModule.js"></script>
+    <script src="js/modules/Inspector/InspectorModule.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
