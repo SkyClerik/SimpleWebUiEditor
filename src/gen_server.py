@@ -5,17 +5,38 @@ import threading
 import queue
 import io
 import zipfile
+import os
 from pathlib import Path
 from datetime import datetime
 from urllib.parse import urlparse
 
-PORT = 8000
-LOG_FILE = 'browser_errors.log'
-DOCUMENTS_DIR = Path(__file__).parent / 'documents'
-DOCUMENTS_DIR.mkdir(exist_ok=True)
-STYLESHEETS_DIR = Path(__file__).parent / 'stylesheets'
-STYLESHEETS_DIR.mkdir(exist_ok=True)
-FRONTEND_DIR = Path(__file__).parent / 'Free Web UI Builder'
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+def find_project_root() -> Path:
+    for candidate in (SCRIPT_DIR, SCRIPT_DIR.parent):
+        if (candidate / 'documents').exists() or (candidate / 'Free Web UI Builder').exists():
+            return candidate
+    return SCRIPT_DIR.parent if SCRIPT_DIR.name == 'src' else SCRIPT_DIR
+
+BASE_DIR = find_project_root()
+PORT = int(os.environ.get('PORT', 8000))
+LOG_FILE = BASE_DIR / 'browser_errors.log'
+
+DOCUMENTS_DIR = BASE_DIR / 'documents'
+DOCUMENTS_DIR.mkdir(parents=True, exist_ok=True)
+
+STYLESHEETS_DIR = BASE_DIR / 'stylesheets'
+STYLESHEETS_DIR.mkdir(parents=True, exist_ok=True)
+
+FRONTEND_DIR = next(
+    (p for p in (BASE_DIR / 'Free Web UI Builder', BASE_DIR / 'frontend', SCRIPT_DIR / 'Free Web UI Builder') if p.exists()),
+    BASE_DIR / 'Free Web UI Builder'
+)
+
+EXPORT_TEMPLATES_DIR = next(
+    (p for p in (BASE_DIR / 'export_templates', SCRIPT_DIR / 'export_templates') if p.exists()),
+    BASE_DIR / 'export_templates'
+)
 
 sse_subscribers = []
 sse_lock = threading.Lock()
@@ -220,7 +241,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             binding = generate_binding(project_name)
             docs_bundle = {}
             sheets_bundle = {}
-            tpl_dir = Path(__file__).parent / 'export_templates'
+            tpl_dir = EXPORT_TEMPLATES_DIR
 
             buf = io.BytesIO()
             with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as zf:
@@ -478,8 +499,11 @@ if __name__ == '__main__':
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(('', PORT), Handler) as httpd:
         print(f'\033[92mServer running: http://localhost:{PORT}\033[0m')
-        print(f'Documents: {DOCUMENTS_DIR}')
-        print(f'Stylesheets: {STYLESHEETS_DIR}')
+        print(f'Project root: {BASE_DIR}')
+        print(f'Frontend:     {FRONTEND_DIR} (found: {FRONTEND_DIR.exists()})')
+        print(f'Documents:    {DOCUMENTS_DIR}')
+        print(f'Stylesheets:  {STYLESHEETS_DIR}')
+        print(f'Templates:    {EXPORT_TEMPLATES_DIR} (found: {EXPORT_TEMPLATES_DIR.exists()})')
         print(f'API: /api/documents, /api/stylesheets, /api/build, /api/events, /api/error')
         try:
             httpd.serve_forever()

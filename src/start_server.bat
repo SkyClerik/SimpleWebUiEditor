@@ -1,11 +1,17 @@
 @echo off
-title Free Web UI Builder — Server
-echo Free Web UI Builder — Python Server
-echo Server running: http://localhost:8000
-echo Documents: H:\TestGigaCode\documents
-echo API: /api/documents, /api/build, /api/events, /api/error
-echo.
-echo Opening browser...
-start http://localhost:8000
-python H:\TestGigaCode\gen_server.py
+title Free Web UI Builder Server
+
+cd /d "%~dp0"
+
+echo Starting Free Web UI Builder...
+start "" "http://localhost:8000"
+
+if exist "%~dp0gen_server.py" (
+    python "%~dp0gen_server.py"
+) else if exist "%~dp0src\gen_server.py" (
+    python "%~dp0src\gen_server.py"
+) else (
+    echo [ERROR] gen_server.py not found!
+)
+
 pause
